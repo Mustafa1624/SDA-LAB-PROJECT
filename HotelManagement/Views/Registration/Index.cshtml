@@ -1,0 +1,264 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@model HotelManagement.ViewModels.CustomerViewModel
+
+
+
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+	<!-- Website CSS style -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Website Font style -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+<style>
+   
+    body {
+        background-image: url(https://taj.tajhotels.com/content/dam/luxury/hotels/Taj_Mahal_Delhi/images/4x3/HotelFacade4x3.jpg);
+        background-attachment: fixed;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        margin: 0;
+        font-family: 'Oxygen', sans-serif;
+    }
+
+    .main {
+        margin: 50px 15px;
+    }
+
+    h1.title {
+        font-size: 32px;
+        font-family: 'Passion One', cursive;
+        font-weight: 400;
+    }
+
+    hr {
+        width: 10%;
+        color: #fff;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 11px;
+        padding-top: 3px;
+    }
+
+    .main-login {
+        background-color: #fff;
+        /* shadows and rounded borders */
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px !important;
+        -moz-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .form-control {
+        height: auto !important;
+        padding: 8px 12px !important;
+    }
+
+    .input-group {
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+    }
+
+    .main-center {
+        margin-top: 30px;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 10px 40px;
+        background-color: #353333;
+        color: #FFF;
+        text-shadow: none;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+        box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+    }
+
+    span.input-group-addon i {
+        color: #009edf;
+        font-size: 17px;
+    }
+
+    .login-button {
+        margin-top: 5px;
+    }
+
+    .login-register {
+        font-size: 11px;
+        text-align: center;
+    }
+
+
+</style>
+
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <h1 class="title text-center">Create an account</h1>
+            @using (Html.BeginForm("CreateUser", "Registration", "POST"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerFName, "First Name", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerFName, new { @class = "form-control", placeholder = "Enter your First name" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerFName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerLName, "Last Name", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                           @Html.TextBoxFor(model => model.CustomerLName, new { @class = "form-control", placeholder = "Enter your Last name" })                         
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerLName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+       
+                <div class="form-group">
+                   @Html.LabelFor(model => model.CustomerGender, "Gender", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-neuter fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerGender, new { @class = "form-control", placeholder = "Enter your Gender (yes...)" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerGender, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerCountry, "Country", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-globe fa fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerCountry, new { @class = "form-control", placeholder = "Enter your Country" })
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerCountry, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                   @Html.LabelFor(model => model.CustomerCity, "City", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerCity, new { @class = "form-control", placeholder = "Enter your City" })                         
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerCity, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                   @Html.LabelFor(model => model.CustomerAddress, "Address", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerAddress, new { @class = "form-control", placeholder = "Enter your Address" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  @Html.LabelFor(model => model.CustomerPhoneNo, "Phone Number", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerPhoneNo, new { @class = "form-control", placeholder = "Enter your Phone No." })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerPhoneNo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerEmail, "Email Address", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", placeholder = "Enter your Email" })                           
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                   @Html.LabelFor(model => model.Password, "Password", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", Type = "Password", placeholder = "Enter your Password" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="form-group">
+                        @Html.HiddenFor(model => model.CustomerId, new { id = "hiddenId" })
+                        @Html.HiddenFor(model => model.CheckedIn, new { value = false })
+                        <input type="submit" style="margin: 0 auto; width:100%;" value="Register" class="btn btn-primary btn-lg btn-block login-button text-center" />
+                    </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts {
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+
+
+}
