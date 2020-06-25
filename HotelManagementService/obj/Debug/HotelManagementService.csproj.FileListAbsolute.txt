@@ -1,0 +1,14 @@
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\HotelManagementService.dll.config
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\HotelManagementService.dll
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\HotelManagementService.pdb
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\EntityFramework.dll
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\EntityFramework.SqlServer.dll
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\HMS.Data.dll
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\HMS.Models.dll
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\HMS.Data.pdb
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\HMS.Models.pdb
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\EntityFramework.xml
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\bin\EntityFramework.SqlServer.xml
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\obj\Debug\HotelManagementService.csprojResolveAssemblyReference.cache
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\obj\Debug\HotelManagementService.dll
+C:\Users\92349\Downloads\Compressed\HotelManagementSystem-master\HotelManagementSystem-master\HotelManagementService\obj\Debug\HotelManagementService.pdb
