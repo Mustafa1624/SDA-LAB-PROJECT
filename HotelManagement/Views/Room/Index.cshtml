@@ -1,0 +1,71 @@
+﻿@model HotelManagement.ViewModels.RoomAndCategoryViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .dropdown-name, h4, .dropdownLabel {
+        margin-left: 13px;
+    }
+</style>
+
+
+<div class="row">
+    <div class="start-banner">
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="col-md-12">     
+        <p class="dropdownLabel">
+            <strong>Choose room type</strong>
+        </p>
+        <select name="myFormInputName" id="myFormInputName" class="form-control dropdown-name">
+         @foreach (var link in Model.CategoryTypes)
+         {
+            <option value="@(link.RoomCategoryId)">@(link.RoomCategoryName)</option>
+         }
+        </select>
+    </div>
+   
+</div>
+
+<div class="col-md-12">
+    <div id="partialPlaceHolder" style="display: none;"></div>
+</div>
+
+
+
+@section scripts {
+    <script>
+
+        function renderRoom(RoomCategoryId) {
+            /* Request the partial view with .get request. */
+            $.get('/Room/RoomInformation/' + RoomCategoryId,
+                function (data) {
+
+                    /* data is the pure html returned from action method, load it to your page */
+                    $('#partialPlaceHolder').html(data);
+
+                    /* little fade in effect */
+                    $('#partialPlaceHolder').fadeIn('fast');
+                });
+        }
+
+
+        $(document)
+            .ready(function () {
+                // Initial room to render
+                var RoomCategoryId = $("#myFormInputName").val();
+                renderRoom(RoomCategoryId);
+
+                // Select room to show
+                $("#myFormInputName")
+                    .on('change',
+                    function () {
+                        var RoomCategoryId = $(this).val();
+                        renderRoom(RoomCategoryId);
+                    });
+            });
+
+    </script>
+}

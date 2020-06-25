@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+
+<style>
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .outer {
+       width:100%;
+    }
+    .inner {
+       
+        margin: 0 auto;
+    }
+
+</style>
+
+<div class="outer">
+
+    <!--Card-->
+    <div class="card card-cascade wider reverse my-4 inner" style="margin-top:70px!important; max-width: 1000px; border:5px solid;">
+
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+            <img src="http://www.casascondor.com.br/wp-content/uploads/2017/09/rooms-hotel-kazbegi-indoor-pool-mountain-view-M-01-r.jpg" class="img-responsive" style="width: auto; height:auto;">
+            <h4 class="centered" style="color:white; font-size: 28px; text-shadow:  -1px -1px 0 #000,  1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000;"><strong>Book a room</strong></h4>
+            <a href="@Url.Action("Index", "Room")">
+                <div class="mask"></div>
+            </a>
+        </div>
+        <!--/Card image-->
+
+
+    </div>
+    <!--/.Card-->
+    <!--Card-->
+    <div class="card card-cascade wider reverse my-4 inner" style=" max-height:600px; max-width: 1000px; border:5px solid;">
+
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+            <img src="https://www.gooddayitaly.eu/index_htm_files/503.jpghttps://github.com/paem/HotelManagementSystem/raw/master/images/mvc/Home.pngfac" class="img-responsive" style="width: auto;">
+            <h4 class="centered" style="color:white; font-size: 28px;  text-shadow:  -1px -1px 0 #000,  1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000; "><strong>About us</strong></h4>
+            <a href="@Url.Action("About", "Home")">
+                <div class="mask"></div>
+            </a>
+        </div>
+        <!--/Card image-->
+    </div>
+    <!--/.Card-->
+</div>
+
+@section Scripts { 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
+
+}

@@ -1,0 +1,241 @@
+﻿@model HotelManagement.ViewModels.RoomAndCategoryViewModel
+@{
+    ViewBag.Title = "About Page";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    /* Left side Card Item (Info) */
+    .item-left {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        height: 600px;
+        margin: 15px;
+        padding: 15px;
+    }
+        .item-left:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            transition: all 100ms ease-in;
+        }
+      
+
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+
+
+    .item-left h3, h4 {
+        margin: 0;
+    }
+
+    .left-main-content {
+        margin-top: 10px;
+    }
+
+  
+    .left-task-items {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        margin: 15px 10px 40px 10px;
+        max-width: 360px;
+        overflow: hidden;
+        position: relative;
+        transition: all 100ms ease-in;
+    }
+
+    .left-ul-item {
+        list-style: none;
+        padding: 0;
+    }
+
+
+ 
+    .btn-more-info3 {
+        bottom: 0;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 130px;
+    }
+
+    .btn-more-info {
+        bottom: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        left: 50%;
+        margin-left: -71px;
+        position: absolute;
+        width: 130px;
+    }
+
+
+    /* Some random fixing */
+
+    .card-heading div {
+        height: 100%;
+    }
+
+
+    .left-task-expand {
+        height: 450px;
+    }
+
+    .left-task-expanded {
+        height: 700px;
+    }
+
+    .center {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+
+
+    .relative-li-item {
+        margin-bottom: 40px;
+    }
+
+    @@media (max-width: 480px) {
+        .item-left {
+            min-height: 300px;
+        }
+
+        .task-item {
+            height: 330px;
+        }
+
+        .pagination-holder {
+            margin-left: 0;
+        }
+    }
+</style>
+
+
+
+    <div class="row">
+
+
+        <h1 style="color: black;">Available Rooms</h1>
+        <hr />
+        @foreach (var item in Model.Rooms)
+        {
+
+            if (item.RoomStatus != true)
+            {
+
+                <div class="col-md-4 item-left left-task-items moreinfo-holder">
+                    <div style="">
+                        <img class="img-responsive" src="@Model.RoomCategory.RoomCategoryImage" style="width:100%; border: 3px solid;" alt="roompicture" />
+                    </div>
+                    @if (Model.RoomCategory.RoomCategoryName == "Single")
+                    {
+                        <p style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i></p>
+                    }
+                    else if (Model.RoomCategory.RoomCategoryName == "Double")
+                    {
+                        <p  style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i> <i class="fa fa-tv fa" aria-hidden="true"></i></p>
+                    }
+                    else if (Model.RoomCategory.RoomCategoryName == "Queen")
+                    {
+                        <p style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i> <i class="fa fa-tv fa" aria-hidden="true"></i> <i class="fa fa-glass fa" aria-hidden="true"></i> <i class="fa fa-cutlery fa" aria-hidden="true"></i></p>
+                    }
+                    else
+                    {
+                        <p  style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i> <i class="fa fa-tv fa" aria-hidden="true"></i> <i class="fa fa-glass fa" aria-hidden="true"></i> <i class="fa fa-cutlery fa" aria-hidden="true"></i></p>
+                    }
+                    <h3 style="margin-top: 5px;">@Model.RoomCategory.RoomCategoryName Room</h3>
+                    <hr />
+                    <div class="left-main-content">
+                        <ul class="left-ul-item">
+                            <li>
+                                <h4 style="opacity: 0.9"> From: @item.RoomPrice kr </h4>                                   
+                                <p style="margin-top: 5px;">  @Model.RoomCategory.RoomCategoryBeds </p>                                                   
+                                <p>  @Model.RoomCategory.RoomCategoryDesc</p>                                                     
+                                <p> Number of rooms available: @Model.RoomCategory.RoomCount</p>                                                   
+                                @if (Model.RoomCapacity.RoomCapacityName == "Single")
+                                {
+                                    <p>Size: 15m<sup>2</sup></p>
+                                    <p>Space for adults: @Model.RoomCapacity.RoomCapacityAdults</p>
+                                    <p>Space for children: @Model.RoomCapacity.RoomCapacityChildren</p>
+                                }
+                                else if (Model.RoomCapacity.RoomCapacityName == "Double")
+                                {
+                                    <p>Size: 25m<sup>2</sup></p>
+                                    <p>Space for adults: @Model.RoomCapacity.RoomCapacityAdults</p>
+                                    <p>Space for children: @Model.RoomCapacity.RoomCapacityChildren</p>
+                                }
+                                else
+                                {
+                                    <p>Size: 40m<sup>2</sup></p>
+                                    <p>Space for adults: @Model.RoomCapacity.RoomCapacityAdults</p>
+                                    <p>Space for children: @Model.RoomCapacity.RoomCapacityChildren</p>
+                                }
+                                                         
+                            </li>
+                        </ul>
+                        <div class="row" style="">
+                            @using (Html.BeginForm("Index", "Booking", new { id = @item.RoomId }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit"  style="text-align:center; margin-left: 10%; margin-right: 10%; width: 80%;" class="btn btn-warning text-center">Book this room</button>
+                            }
+                        </div>
+                    </div>
+                   
+                </div>
+
+            }
+
+        }
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            $(document)
+                .ready(function () {              
+                    $('.moreButtonLeft')
+                        .on('click',
+                        function () {
+                            var taskItemDiv = $(this).parent('div');
+                            taskItemDiv.toggleClass("left-task-expand left-task-expanded");
+                        });
+
+                });
+        </script>
