@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="GUI.AdminApp.userbookings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GUI.AdminApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="30 30 0 0" HorizontalAlignment="Center">
+            <Image Margin="0 0 0 10" Width="350" x:Name="bookingImage" Source=""/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="ubookings"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingBeds"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingId"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingDate"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingArrivalDate"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingDepatureDate"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingStatus"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalNights"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalRooms"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalAdults"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalChilds"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalCost"/>
+            <Button x:Name="goBack" Click="goBack_Click">Back</Button>
+            </StackPanel>
+    </Grid>
+</Page>
