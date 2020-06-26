@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9892000a-b2d8-41eb-80c8-3a0ca112f58d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52028/HMSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HMSService.xsd" MetadataType="Schema" ID="2308c038-9962-4cea-b8a2-66e14cb77e8c" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HMSService.disco" MetadataType="Disco" ID="9759154a-b1fb-4f44-953c-7bb4f2ef568a" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?disco" />
+    <MetadataFile FileName="HMSService1.xsd" MetadataType="Schema" ID="8912c059-bdc9-464c-8bcd-075a4cf90d5f" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HMSService.wsdl" MetadataType="Wsdl" ID="b21d80cf-9d78-4cad-bea4-2d415919a8b2" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?wsdl" />
+    <MetadataFile FileName="HMSService2.xsd" MetadataType="Schema" ID="a87aead2-a234-4238-a3a0-abc0e6d03ab7" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

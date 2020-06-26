@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="GUI.AdminApp.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GUI.AdminApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+     <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+            <StackPanel Background="DarkGray">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="adminHome" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                        Width="50" Height="50" Background="Transparent" Click="adminHome_Click"/>
+                    <TextBlock Text="Home" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="searchCustomer" FontFamily="Segoe MDL2 Assets" Content="&#xE11A;"
+                    Width="50" Height="50" Background="Transparent" Click="searchCustomer_Click"/>
+                    <TextBlock Text="Search" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="xmlUpload" FontFamily="Segoe MDL2 Assets" Content="&#xE158;"
+                        Width="50" Height="50" Background="Transparent" Click="xml_Click"/>
+                    <TextBlock Text="Rooms" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="logout" FontFamily="Segoe MDL2 Assets" Content="&#xE830;"
+                        Width="50" Height="50" Background="Transparent" Click="logout_Click"/>
+                    <TextBlock Text="Logout" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+
+        <SplitView.Content>
+            <Frame Name="myFrame">
+                <Grid>
+                    <ListView x:Name="roomList" HorizontalAlignment="Center" Width="346" SelectionChanged="roomList_SelectionChanged">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Height = "35" Width = "400">
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <TextBlock Margin="0 0 5 0" x:Name="txbLName" Text="Room Door Number"  />
+                                        <TextBlock x:Name="txbName" Text="{Binding RoomDoorNumber}" />
+
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </Grid>
+            </Frame>
+        </SplitView.Content>
+    </SplitView>
+</Page>
